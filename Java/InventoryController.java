@@ -30,3 +30,56 @@ public class InventoryController {
 
 
 }
+
+    /**
+     * Display a menu to the user
+     *
+     * @return choice
+     */
+
+public int menu(){
+    System.out.println("IMS - Inventory Management System");
+    System.out.println("1- Add New Item");
+    System.out.println("2- Delete An Item");
+    System.out.println("3- Update An Item");
+    System.out.println("4- Display All Items");
+    System.out.println("5- Exit Application");
+
+    int choice;
+    do{
+        System.out.print("Choose An Option: ");
+        choice = keyboard.nextInt();
+
+    }
+
+    }while(choice <1 || choice >5);
+
+    return choice;
+
+}
+
+pubic void runApp(){
+
+    int choice;
+
+    do{
+        choice = menu();
+        System.out.println();
+
+        if(choice == 1){
+        addItem();
+
+        }else if(choice == 2){
+            deleteItem();
+        }else if(choice = 3){
+            updateItem();
+
+        }else if(choice = 4){
+
+        }
+        System.out.println();
+
+
+        }while(choice != 5);
+
+
