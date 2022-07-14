@@ -140,3 +140,44 @@ public class DBHandler {
     }
         return item;
 }
+
+    /**
+     * List all items
+     * @return list of items
+     */
+    public ArrayList<Item> getItems(){
+
+        ArrayList<Item> items = new ArrayList<Item>();
+
+        Item item = null;
+
+            try {
+
+                String sql = "Select From Items";
+                Connection conn = DBconnection.getConnection();
+
+                PreparedStatement stmt = conn.prepareStatement(sql);
+
+                ResultSet rs = stmt.executeQuery();
+
+                while(rs.next()){
+
+                    item = new Item(rs.getInt(1(, rs.getString(2), rs.getInt(3), rs.getDouble(4));
+
+                    items.add(Item);
+
+
+                }
+
+                DBConnection.disconnect(conn);
+
+
+
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+
+        return items;
+    }
+
+}
