@@ -14,11 +14,36 @@ public class DBConnection {
        Connection conn - null;
 
        try{
+           conn = DriverManage.getConnection(URL+DBNAME+PARAMETERS, USER, PASSWORD);
 
        }catch(Exception e){
-           e.print
+           e.printStackTrace();
        }
 
        return conn;
     }
 }
+
+Public static void disconnect(Connection conn){
+    try{
+        if(conn != null){
+            conn.close();
+        }
+
+        }catch(Exception e){
+        e.printStackTrace();
+
+        }
+        }
+
+        public static void main(String[] args){
+    Connection conn = getConnection();
+
+    if (conn !=null){
+        System.out.println("Connection Successful.");
+
+        }else{
+        System.out.println("Connection Failed.");
+        }
+
+        }
