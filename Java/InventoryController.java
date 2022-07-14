@@ -26,7 +26,40 @@ public class InventoryController {
             System.out.println("Failed To Save");
         }
 
+public void updateItem(){
+            System.out.println("Enter Item ID: ");
+int id = keyboard.nextInt();
 
+Item item - handler.getItem(id);
+
+if(item == null){
+    System.out.println("No Such Item.");
+    return;
+
+
+}
+System.out.println("\nItem ID: " + item.getItemId());
+            System.out.println("Item Name: " + item.getItemName());
+            System.out.println("Item Quantity: " + item.getQuantity());
+            System.out.println("Item Price:  " + item.getPrice());
+            System.out.println();
+
+System.out.print("Enter New Quantitiy: ");
+int quantity = keyboard.nextInt();
+System.out.print("Enter New Price:");
+double price = keyboard.nextDouble();
+
+item.setQuantity(quantity);
+item.setPrice(price);
+
+if(handler.updateItem(id)){
+    System.out.println("Item Has Been Updated");
+
+
+}else {
+    System.out.println("Item Update Failed");
+}
+        }
 
 
 }
@@ -39,6 +72,19 @@ private void deleteItem(){
         }else {
             System.out.println("Failed To Delete Item");
         }
+}
+
+public void displayInventory(){
+
+        ArrayList<Items> items = handler.getItems();
+
+   System.out.print(String.format("%-12d %-30s %-10d %s%n", "Item ID", "Item Name", "Quantity", "Price"));
+
+   for(Item i: items){
+       System.out.println(i);
+   }
+
+
 }
 
     /**
@@ -85,6 +131,8 @@ pubic void runApp(){
             updateItem();
 
         }else if(choice = 4){
+            displayInventory();
+        }
 
         }
         System.out.println();
