@@ -31,6 +31,17 @@ public class InventoryController {
 
 }
 
+private void deleteItem(){
+        System.out.println("Enter Item ID: ");
+        id = keyboard.netInt();
+
+        if(handler.deleteItem(id)){
+            System.out.println("Item With ID " + id + " Has Been Deleted.");
+        }else {
+            System.out.println("Failed To Delete Item");
+        }
+}
+
     /**
      * Display a menu to the user
      *

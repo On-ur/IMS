@@ -4,6 +4,7 @@ public class IMS {
 
 public static void main(String[] args){
     InventoryController controller = new InventoryController();
+    controller.runApp();
 
 }
 }
