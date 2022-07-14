@@ -31,7 +31,7 @@ public class DBHandler {
             result = inserted >= 1;
 
             DBConnection.disconnect(connection);
-            
+
 
 
         }catch (Exception e){
