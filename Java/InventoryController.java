@@ -30,7 +30,6 @@ public class InventoryController {
 
 
 }
-
 private void deleteItem(){
         System.out.println("Enter Item ID: ");
         id = keyboard.netInt();
@@ -92,5 +91,19 @@ pubic void runApp(){
 
 
         }while(choice != 5);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
